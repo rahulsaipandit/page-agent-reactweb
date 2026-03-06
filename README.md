@@ -72,6 +72,8 @@ const agent = new PageAgent({
 
 await agent.execute('Click the login button')
 ```
+ The root package.json has a prepare script that runs husky (line 35), and husky is listed as a devDependency (line 56). So before you run npm install in a subdirectory (packages/website), you have to run `npm install` from root to run the root's prepare script. Also, verify the .husky directory exists:
+
 cd tree/main
 npm ci
 npm start
